@@ -10,13 +10,13 @@
     @font-face {
       font-family: helvetica;
       font-weight: bold;
-      src: url("/assets/HelveticaNeueBold-PoMR7CfD-PoMR7CfD.ttf") format("opentype");
+      src: url("/assets/helvetica-neue-55-cdnfonts/HelveticaNeue-Bold.otf") format("opentype");
     }
 
     @font-face {
       font-family: helvetica;
-      font-weight: 500;
-      src: url("/assets/HelveticaNeue-Medium-sDfiWtXx-sDfiWtXx.otf") format("opentype");
+      font-weight: medium;
+      src: url("/assets/HelveticaNeue-Light-COmg36Cq.otf") format("opentype");
     }
 
     * {
@@ -36,10 +36,10 @@
     }
 
     p {
-      font-size: 20px;
+      font-size: 24px;
       font-family: helvetica, sans-serif;
-      font-weight: 500;
-      letter-spacing: -1.5%;
+      font-weight: medium;
+      letter-spacing: -1%;
     }
 
     /* Górny kontener z menu */
@@ -74,19 +74,19 @@
     }
 
     /* Styl dla popupu */
-    #popup-overlay {
+    #popup-overlay, #popup-overlay2 {
       position: absolute; /* Pozostawiamy absolute */
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0); /* Lekko przezroczyste tło */
+      background-color: #000; /* Całkowicie czarne tło */
       display: none; /* Ukryty domyślnie */
       overflow: auto; /* Pozwala na przewijanie */
       z-index: 6000; /* Wyższy niż wszystkie inne elementy */
     }
 
-    #popup-overlay.active {
+    #popup-overlay.active, #popup-overlay2.active {
       display: block;
     }
 
@@ -110,24 +110,24 @@
       color: red;
     }
 
-    #popup-overlay .popup-content {
+    #popup-overlay .popup-content, #popup-overlay2 .popup-content {
       position: relative;
       width: 90%;
       max-width: 800px;
       margin: 50px auto; /* Wyśrodkowanie popupu z marginesem od góry */
       padding: 20px;
-      background-color: rgba(0, 0, 0); /* Ciemne tło dla treści */
+      background-color: #000; /* Całkowicie czarne tło dla treści */
       border-radius: 10px;
       text-align: center;
       color: white;
     }
 
     /* Placeholder na obraz */
-    #popup-overlay .image-container {
+    #popup-overlay .image-container, #popup-overlay2 .image-container {
       margin-top: 20px;
     }
 
-    #popup-overlay .image-container img {
+    #popup-overlay .image-container img, #popup-overlay2 .image-container img {
       width: 100%;
       height: auto;
       object-fit: contain;
@@ -197,7 +197,7 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/assets/index-zgj3joLi.js"></script>
+  <script type="module" crossorigin src="/assets/index-BtDe0vYZ.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/vendor-DA3NTc3T.js">
 </head>
 <body>
@@ -207,38 +207,77 @@
     <div class="popup-content">
       <!-- Tytuł -->
       <div class="text-content">
-        <h2 style="text-align:left; font-size: 3rem; margin-bottom: 10px;">ANIMACJA</h2>
+        <h2 style="text-align:left; font-size: 4rem; margin-bottom: 20px;">BSK TREATMENT</h2>
+
+        <!-- Trzeci paragraf -->
+        <div class="additional-content">
+          <p style="text-align: left; margin-bottom: 40px;">
+            Od zawsze jaram się animacją, a moja przygoda z jej robieniem
+            zaczęła się w wieku 11lat – robiłem animatki z Minecrafta.
+            Już pewien czas kiełkuje we mnie pomysł na animację,
+            która wraca stylistyką do lat 2000. Zachwyca mnie podejście Gorrilaz, Kanye, Nigo
+            do tworzenia animacji, te rzeczy mimo upływu lat dalej są świeże bo mają genialny concept.
+          </p>
+        </div>
+        <div class="image-container">
+          <img style="margin-bottom: 30px;" src="/assets/MOOD_123-DenTRTqv.jpg" alt="Obrazek Popupu" id="popup-image">
+        </div>
+
         <!-- Pierwszy paragraf -->
         <p style="text-align: left;">
-          Już pewien czas kiełkuje we mnie pomysł na animację,
-          która sprawdziłaby się jako teledysk albo kampania.
           Naturalnie pomyślałem o BSK - nostalgia z lat 2000,
           sielankowy klimat i hiphop. Jest spory potencjał, żeby stworzyć
           coś świeżego i dobrze rezonującego. <br><br>
           Chciałbym też wykorzystać świat HYPETALK, 
           dodać postacie z uniwersum, żeby było to coś fajnego dla community.
-          Poniżej wklejam mały previs jak by to mogło wyglądać, animacja WiP.
+          <br><br>
+          Poniżej wklejam szkic jak by to mogło wyglądać,
+          Hypetalk HQ w tym świecie, i model wiewióra z ciuchami
+          z Waszego asortymentu. Docelowo zrobił bym modele 
+          chłopaków.
+          <br><br>
+          W procesie wykorzystywałbym AI i najnowsze patenty, żeby optymalizować koszt.
         </p>
         <!-- Wideo -->
-        <video controls src="/assets/WOOKI_TREATMENT-Dff_v0s1.mp4" style="width: 100%; max-height: 400px; margin: 20px 0;"></video>
+        <video controls src="/assets/WOOKI_TREATMENT-Dff_v0s1.mp4" style="width: 100%; max-height: 600px; margin: 20px 0;"></video>
         <!-- Drugi paragraf -->
-        <p style="text-align: left;">
-          Moje doświadczenie w branży reklamowej pozwoliło mi zrozumieć, jak ważne jest wprowadzanie świeżych i kreatywnych rozwiązań.
-        </p>
       </div>
-      <video controls src="/assets/hypetalk_hq-S8PpWinI.mp4" style="width: 100%; max-height: 400px; margin: 20px 0;"></video>
+      <video controls src="/assets/hypetalk_hq-S8PpWinI.mp4" style="width: 100%; max-height: 600px; margin: 20px 0;"></video>
       <!-- Obraz -->
       <div class="image-container">
         <img style="margin-bottom: 30px;" src="/assets/postacie-L-yaYrWS.png" alt="Obrazek Popupu" id="popup-image">
       </div>
-      <!-- Trzeci paragraf -->
-      <div class="additional-content">
+      <p style="text-align: left; margin-top: 20px ;padding-bottom: 100px;">
+        Dziena! To na razie tyle odemnie.
+      </p>
+    </div>
+  </div>
+
+  <!-- Drugi Popup Overlay -->
+  <div id="popup-overlay2">
+    <button class="close-button" id="close-popup2">&times;</button>
+    <div class="popup-content">
+      <!-- Tytuł -->
+      <div class="text-content">
+        <h2 style="text-align:left; font-size: 4rem; margin-bottom: 20px;">JESTEM JAK HIPHOP NIGDY STOP</h2>
+        <!-- Dodaj treść drugiego popupu tutaj -->
         <p style="text-align: left;">
-          Zapraszam do współpracy i wspólnego tworzenia projektów, które przyniosą wartość i innowację na polski rynek.
+          Mega cenie to co robicie, Hypetalk ma wpływ na kulture i inspiruje ludzi do tworzenia.
+          Mieliśmy juz mały przelot przy pracy nad ClanCampbell, gdzie robiłem Art-Direction / animacje,
+          tez pracowalem nad kilkoma animacjami dla CHAOS. Bardzo mi siedziały te projekty;
+          czułem, ze pracuje z ludzmi którzy wiedzą o co chodzi.
+          Umieszczam tutaj moodboardy, co bym chciał zrealizować w tym roku.
+          <br><br>
+          Uwielbiam robić jakościową komercje i chcę się temu poświęcić (a właściwie się temu poświęciłem,
+          załączam REEL, mam w portfolio takich klientów jak: Żabka / Prosto / Bacardi / Wyborowa / Tymbark / Hardmade
+          i wiele przetargów na koncie, i tez akcje z zajawki jak 4the20s).
+          Dążę do najwyższej jakości wizualnej, inspiruje się najlepszymi,
+          którzy cały czas podwyższają poprzeczkę i zmieniają zasady gry jak: Abyss.digital, CLAN.HUB.
         </p>
-      </div>
-      <div class="image-container">
-        <img style="margin-bottom: 30px;" src="/assets/MOOD_123-DGivOrlh.png" alt="Obrazek Popupu" id="popup-image">
+        <!-- Przykładowy obraz -->
+        <div class="image-container">
+          <img style="margin-bottom: 30px;" src="/assets/mood_wooki-C8nz6wD_.png" alt="Obrazek Popupu 2" id="popup-image2">
+        </div>
       </div>
     </div>
   </div>
@@ -255,45 +294,80 @@
 
   <!-- Główny skrypt aplikacji -->
 
-  <!-- Skrypt do obsługi popupu -->
+  <!-- Skrypt do obsługi popupów -->
   <script>
-   document.addEventListener('DOMContentLoaded', function() {
-  const popup = document.getElementById('popup-overlay');
-  const closeBtn = document.getElementById('close-popup');
+    document.addEventListener('DOMContentLoaded', function() {
+      const popup = document.getElementById('popup-overlay');
+      const closeBtn = document.getElementById('close-popup');
+      const popup2 = document.getElementById('popup-overlay2');
+      const closeBtn2 = document.getElementById('close-popup2');
 
-  // Funkcja otwierająca popup
-  function openPopup() {
-    console.log('Otwieranie popupu');
-    popup.classList.add('active');
-    document.body.style.overflow = 'auto'; // Włącza przewijanie
-  }
+      // Funkcja otwierająca pierwszy popup
+      function openPopup() {
+        console.log('Otwieranie popupu');
+        popup.classList.add('active');
+        document.body.style.overflow = 'auto'; // Włącza przewijanie
+      }
 
-  // Funkcja zamykająca popup
-  function closePopupFunc() {
-    console.log('Zamykanie popupu');
-    popup.classList.remove('active');
-    document.body.style.overflow = 'hidden'; // Przywraca ukryte przewijanie
-    popup.style.display = 'none';
-  }
+      // Funkcja zamykająca pierwszy popup
+      function closePopupFunc() {
+        console.log('Zamykanie popupu');
+        popup.classList.remove('active');
+        document.body.style.overflow = 'hidden'; // Przywraca ukryte przewijanie
+        popup.style.display = 'none';
+      }
 
-  // Nasłuchiwanie na kliknięcie i dotknięcie przycisku zamykającego
-  closeBtn.addEventListener('click', closePopupFunc);
-  closeBtn.addEventListener('touchend', closePopupFunc);
+      // Funkcja otwierająca drugi popup
+      function openPopup2() {
+        console.log('Otwieranie popupu 2');
+        popup2.classList.add('active');
+        document.body.style.overflow = 'auto'; // Włącza przewijanie
+      }
 
-  // Zamknięcie popupu przy kliknięciu poza treścią popupu
-  popup.addEventListener('click', function(event) {
-    if (event.target === popup) {
-      closePopupFunc();
-    }
-  });
+      // Funkcja zamykająca drugi popup
+      function closePopupFunc2() {
+        console.log('Zamykanie popupu 2');
+        popup2.classList.remove('active');
+        document.body.style.overflow = 'hidden'; // Przywraca ukryte przewijanie
+        popup2.style.display = 'none';
+      }
 
-  // Przykładowe otwieranie popupu po kliknięciu elementu menu
-  const menuItem = document.querySelector('.menu-item');
-  if (menuItem) {
-    menuItem.addEventListener('click', openPopup);
-    menuItem.addEventListener('touchend', openPopup);
-  }
-});
+      // Nasłuchiwanie na kliknięcie i dotknięcie przycisku zamykającego pierwszy popup
+      closeBtn.addEventListener('click', closePopupFunc);
+      closeBtn.addEventListener('touchend', closePopupFunc);
+
+      // Nasłuchiwanie na kliknięcie i dotknięcie przycisku zamykającego drugi popup
+      closeBtn2.addEventListener('click', closePopupFunc2);
+      closeBtn2.addEventListener('touchend', closePopupFunc2);
+
+      // Zamknięcie pierwszego popupu przy kliknięciu poza treścią popupu
+      popup.addEventListener('click', function(event) {
+        if (event.target === popup) {
+          closePopupFunc();
+        }
+      });
+
+      // Zamknięcie drugiego popupu przy kliknięciu poza treścią popupu
+      popup2.addEventListener('click', function(event) {
+        if (event.target === popup2) {
+          closePopupFunc2();
+        }
+      });
+
+      // Przykładowe otwieranie popupów po kliknięciu elementów menu
+      const menuItem = document.querySelector('.menu-item');
+      if (menuItem) {
+        menuItem.addEventListener('click', openPopup);
+        menuItem.addEventListener('touchend', openPopup);
+      }
+
+      // Dodanie obsługi otwierania drugiego popupu
+      const menuItem2 = document.getElementById('open-popup2');
+      if (menuItem2) {
+        menuItem2.addEventListener('click', openPopup2);
+        menuItem2.addEventListener('touchend', openPopup2);
+      }
+    });
   </script>
 </body>
 </html>
