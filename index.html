@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WOOKI ORG</title>
+  <title>WOOKI for HYPETALK</title>
   <style>
     /* Ustawienia globalne */
 
@@ -110,6 +110,10 @@
       color: red;
     }
 
+    .popup-content h2 {
+        font-size: 4rem; /* Możesz dostosować wartość według potrzeb */
+      }
+
     #popup-overlay .popup-content, #popup-overlay2 .popup-content {
       position: relative;
       width: 90%;
@@ -180,7 +184,6 @@
       text-decoration: none;
     }
     
-
     /* Responsywne dostosowanie */
     @media (max-width: 768px) {
       .menu-item {
@@ -195,9 +198,36 @@
       .close-button {
         font-size: 25px;
       }
+
+      /* Nowe style dla popupów na mobile */
+      
+      /* Ukrywanie overflow-x */
+      #popup-overlay, #popup-overlay2 {
+        overflow-x: hidden;
+      }
+
+      /* Zmniejszenie rozmiaru tytułu w obu popupach */
+      .popup-content h2 {
+        font-size: 2rem; /* Możesz dostosować wartość według potrzeb */
+      }
+
+      /* Opcjonalnie: Dostosowanie paddingu i marginesów dla lepszej responsywności */
+      .popup-content {
+        padding: 15px;
+      }
+
+      .popup-content p {
+        font-size: 20px; /* Dostosuj, jeśli potrzebujesz */
+      }
+
+      .popup-content video, 
+      .popup-content .image-container img {
+        max-width: 100%;
+        height: auto;
+      }
     }
   </style>
-  <script type="module" crossorigin src="/t1/assets/index-B3y6N3ZH.js"></script>
+  <script type="module" crossorigin src="/t1/assets/index-C917VOY_.js"></script>
 </head>
 <body>
   <!-- Popup Overlay -->
@@ -206,7 +236,7 @@
     <div class="popup-content">
       <!-- Tytuł -->
       <div class="text-content">
-        <h2 style="text-align:left; font-size: 4rem; margin-bottom: 20px;">BSK TREATMENT</h2>
+        <h2 style="text-align:left; margin-bottom: 20px;">BSK TREATMENT</h2>
 
         <!-- Trzeci paragraf -->
         <div class="additional-content">
@@ -258,24 +288,24 @@
     <div class="popup-content">
       <!-- Tytuł -->
       <div class="text-content">
-        <h2 style="text-align:left; font-size: 4rem; margin-bottom: 20px;">JESTEM JAK HIPHOP NIGDY STOP</h2>
+        <h2 style="text-align:left; margin-bottom: 20px;">JESTEM JAK HIPHOP, NIGDY STOP</h2>
         <!-- Dodaj treść drugiego popupu tutaj -->
-        <p style="text-align: left;">
-          Mega cenie to co robicie, Hypetalk ma wpływ na kulture i inspiruje ludzi do tworzenia.
+        <p style="text-align: left; margin-bottom: 30px;">
+          Mega cenie to co robicie, Hypetalk ma wpływ na kulture i inspiruje ludzi.
           Mieliśmy juz mały przelot przy pracy nad ClanCampbell, gdzie robiłem Art-Direction / animacje,
           tez pracowalem nad kilkoma animacjami dla CHAOS. Bardzo mi siedziały te projekty;
           czułem, ze pracuje z ludzmi którzy wiedzą o co chodzi.
           Umieszczam tutaj moodboardy, co bym chciał zrealizować w tym roku.
           <br><br>
-          Uwielbiam robić jakościową komercje i chcę się temu poświęcić (a właściwie się temu poświęciłem,
-          załączam REEL, mam w portfolio takich klientów jak: Żabka / Prosto / Bacardi / Wyborowa / Tymbark / Hardmade
-          i wiele przetargów na koncie, i tez akcje z zajawki jak 4the20s).
-          Dążę do najwyższej jakości wizualnej, inspiruje się najlepszymi,
-          którzy cały czas podwyższają poprzeczkę i zmieniają zasady gry jak: Abyss.digital, CLAN.HUB.
+          Uwielbiam robić jakościową komercje i chcę się temu poświęcić (a właściwie się temu poświęciłem
+          pracowałem dla takich klientów: Żabka / Prosto / Bacardi / Wyborowa / Tymbark / Hardmade
+          i wiele przetargów na koncie, tez zajawkowe akcje jak 4the20s na koncie).
+          Dążę do najwyższej jakości wizualnej, inspiruje się najlepszymi
+          którzy cały czas podwyższają poprzeczkę i zmieniają zasady gry.
         </p>
         <!-- Przykładowy obraz -->
         <div class="image-container">
-          <img style="margin-bottom: 30px;" src="/t1/assets/mood_wooki-C8nz6wD_.png" alt="Obrazek Popupu 2" id="popup-image2">
+          <img style="margin-bottom: 30px;" src="/t1/assets/mood_wooki-CuT9dvwp.jpg" alt="Obrazek Popupu 2" id="popup-image2">
         </div>
       </div>
     </div>
@@ -294,79 +324,97 @@
   <!-- Główny skrypt aplikacji -->
 
   <!-- Skrypt do obsługi popupów -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const popup = document.getElementById('popup-overlay');
-      const closeBtn = document.getElementById('close-popup');
-      const popup2 = document.getElementById('popup-overlay2');
-      const closeBtn2 = document.getElementById('close-popup2');
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('popup-overlay');
+    const closeBtn = document.getElementById('close-popup');
+    const popup2 = document.getElementById('popup-overlay2');
+    const closeBtn2 = document.getElementById('close-popup2');
 
-      // Funkcja otwierająca pierwszy popup
-      function openPopup() {
-        console.log('Otwieranie popupu');
-        popup.classList.add('active');
-        document.body.style.overflow = 'auto'; // Włącza przewijanie
-      }
+    // Funkcja otwierająca pierwszy popup
+    function openPopup() {
+      console.log('Otwieranie popupu');
+      popup.classList.add('active');
+      popup.style.display = 'flex'; // Upewnij się, że popup jest widoczny
+      document.body.style.overflow = 'auto'; // Włącza przewijanie
 
-      // Funkcja zamykająca pierwszy popup
-      function closePopupFunc() {
-        console.log('Zamykanie popupu');
-        popup.classList.remove('active');
-        document.body.style.overflow = 'hidden'; // Przywraca ukryte przewijanie
-        popup.style.display = 'none';
-      }
+      // Emituj niestandardowe zdarzenie
+      const event = new Event('popupOpened');
+      document.dispatchEvent(event);
+    }
 
-      // Funkcja otwierająca drugi popup
-      function openPopup2() {
-        console.log('Otwieranie popupu 2');
-        popup2.classList.add('active');
-        document.body.style.overflow = 'auto'; // Włącza przewijanie
-      }
+    // Funkcja zamykająca pierwszy popup
+    function closePopupFunc() {
+      console.log('Zamykanie popupu');
+      popup.classList.remove('active');
+      popup.style.display = 'none';
+      document.body.style.overflow = 'hidden'; // Przywraca ukryte przewijanie
 
-      // Funkcja zamykająca drugi popup
-      function closePopupFunc2() {
-        console.log('Zamykanie popupu 2');
-        popup2.classList.remove('active');
-        document.body.style.overflow = 'hidden'; // Przywraca ukryte przewijanie
-        popup2.style.display = 'none';
-      }
+      // Emituj niestandardowe zdarzenie
+      const event = new Event('popupClosed');
+      document.dispatchEvent(event);
+    }
 
-      // Nasłuchiwanie na kliknięcie i dotknięcie przycisku zamykającego pierwszy popup
-      closeBtn.addEventListener('click', closePopupFunc);
-      closeBtn.addEventListener('touchend', closePopupFunc);
+    // Funkcja otwierająca drugi popup
+    function openPopup2() {
+      console.log('Otwieranie popupu 2');
+      popup2.classList.add('active');
+      popup2.style.display = 'flex'; // Upewnij się, że popup2 jest widoczny
+      document.body.style.overflow = 'auto'; // Włącza przewijanie
 
-      // Nasłuchiwanie na kliknięcie i dotknięcie przycisku zamykającego drugi popup
-      closeBtn2.addEventListener('click', closePopupFunc2);
-      closeBtn2.addEventListener('touchend', closePopupFunc2);
+      // Emituj niestandardowe zdarzenie
+      const event = new Event('popupOpened');
+      document.dispatchEvent(event);
+    }
 
-      // Zamknięcie pierwszego popupu przy kliknięciu poza treścią popupu
-      popup.addEventListener('click', function(event) {
-        if (event.target === popup) {
-          closePopupFunc();
-        }
-      });
+    // Funkcja zamykająca drugi popup
+    function closePopupFunc2() {
+      console.log('Zamykanie popupu 2');
+      popup2.classList.remove('active');
+      popup2.style.display = 'none';
+      document.body.style.overflow = 'hidden'; // Przywraca ukryte przewijanie
 
-      // Zamknięcie drugiego popupu przy kliknięciu poza treścią popupu
-      popup2.addEventListener('click', function(event) {
-        if (event.target === popup2) {
-          closePopupFunc2();
-        }
-      });
+      // Emituj niestandardowe zdarzenie
+      const event = new Event('popupClosed');
+      document.dispatchEvent(event);
+    }
 
-      // Przykładowe otwieranie popupów po kliknięciu elementów menu
-      const menuItem = document.querySelector('.menu-item');
-      if (menuItem) {
-        menuItem.addEventListener('click', openPopup);
-        menuItem.addEventListener('touchend', openPopup);
-      }
+    // Nasłuchiwanie na kliknięcie i dotknięcie przycisku zamykającego pierwszy popup
+    closeBtn.addEventListener('click', closePopupFunc);
+    closeBtn.addEventListener('touchend', closePopupFunc);
 
-      // Dodanie obsługi otwierania drugiego popupu
-      const menuItem2 = document.getElementById('open-popup2');
-      if (menuItem2) {
-        menuItem2.addEventListener('click', openPopup2);
-        menuItem2.addEventListener('touchend', openPopup2);
+    // Nasłuchiwanie na kliknięcie i dotknięcie przycisku zamykającego drugi popup
+    closeBtn2.addEventListener('click', closePopupFunc2);
+    closeBtn2.addEventListener('touchend', closePopupFunc2);
+
+    // Zamknięcie pierwszego popupu przy kliknięciu poza treścią popupu
+    popup.addEventListener('click', function(event) {
+      if (event.target === popup) {
+        closePopupFunc();
       }
     });
-  </script>
+
+    // Zamknięcie drugiego popupu przy kliknięciu poza treścią popupu
+    popup2.addEventListener('click', function(event) {
+      if (event.target === popup2) {
+        closePopupFunc2();
+      }
+    });
+
+    // Przykładowe otwieranie popupów po kliknięciu elementów menu
+    const menuItem = document.querySelector('.menu-item');
+    if (menuItem) {
+      menuItem.addEventListener('click', openPopup);
+      menuItem.addEventListener('touchend', openPopup);
+    }
+
+    // Dodanie obsługi otwierania drugiego popupu
+    const menuItem2 = document.getElementById('open-popup2');
+    if (menuItem2) {
+      menuItem2.addEventListener('click', openPopup2);
+      menuItem2.addEventListener('touchend', openPopup2);
+    }
+  });
+</script>
 </body>
 </html>
